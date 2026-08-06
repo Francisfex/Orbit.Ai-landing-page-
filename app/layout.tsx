@@ -10,15 +10,31 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Orbit.Ai — Hire AI Employees',
+  title: 'Orbit AI – AI Employee for Modern Businesses',
   description:
-    'Orbit.Ai lets businesses hire AI employees that work 24/7 across WhatsApp, Instagram, Website and Shopify. Join the waitlist.',
+    'Orbit AI helps businesses automate customer conversations, qualify leads, book appointments and grow sales using AI.',
   generator: 'v0.app',
   openGraph: {
-    title: 'Orbit.Ai — Hire AI Employees',
+    title: 'Orbit AI – AI Employee for Modern Businesses',
     description:
-      'AI employees that answer customers 24/7 across WhatsApp, Instagram, Website and Shopify.',
+      'Your AI Employee That Never Sleeps. Automate customer conversations, qualify leads, and close sales 24/7.',
     type: 'website',
+    url: 'https://orbitai.com',
+    images: [
+      {
+        url: 'https://orbitai.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Orbit AI',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Orbit AI – AI Employee for Modern Businesses',
+    description:
+      'Your AI Employee That Never Sleeps. Automate customer conversations, qualify leads, and close sales 24/7.',
+    images: ['https://orbitai.com/og-image.png'],
   },
 }
 

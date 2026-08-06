@@ -5,17 +5,16 @@ import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
 import {
   BarChart3,
   Globe,
-  Headphones,
   MessageCircle,
   Package,
   Play,
-  ShoppingBag,
   TrendingUp,
+  X,
 } from 'lucide-react'
 import type { ComponentType, SVGProps } from 'react'
+import { useState } from 'react'
 import { Particles } from './particles'
 import { InlineWaitlist, WaitlistButton } from './waitlist'
-import { InstagramIcon } from './brand-icons'
 
 type FloatCard = {
   icon: ComponentType<SVGProps<SVGSVGElement>>
@@ -40,7 +39,10 @@ const cards: FloatCard[] = [
   { icon: TrendingUp, label: 'Notifications', sub: 'Alert sent', x: 40, y: 78, depth: 18, delay: 1.6 },
 ]
 
+const DEMO_VIDEO_URL = 'https://www.youtube.com/embed/5hUO-Xgd_Cg?rel=0&modestbranding=1&playsinline=1'
+
 export function Hero() {
+  const [showVideo, setShowVideo] = useState(false)
   const mx = useMotionValue(0)
   const my = useMotionValue(0)
   const sx = useSpring(mx, { stiffness: 60, damping: 18 })
@@ -55,75 +57,73 @@ export function Hero() {
   }
 
   return (
-    <section
-      id="top"
-      className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-16"
-    >
-      <div className="absolute inset-0 grid-fade" aria-hidden />
-      <Particles count={30} />
+    <>
+      <section
+        id="top"
+        className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-16"
+      >
+        <div className="absolute inset-0 grid-fade" aria-hidden />
+        <Particles count={30} />
 
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-8">
-        {/* Left */}
-        <div className="relative z-10 max-w-xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs text-muted-foreground"
-          >
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-60" />
-              <span className="relative inline-flex size-2 rounded-full bg-accent" />
-            </span>
-            Launching soon — join the waitlist
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-5xl font-black leading-[1.02] tracking-tight text-balance sm:text-6xl lg:text-7xl"
-          >
-            Hire <span className="text-gradient-violet">AI Employees.</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-6 text-lg leading-relaxed text-muted-foreground text-pretty"
-          >
-            Orbit.Ai gives your business intelligent AI Employees that answer calls, reply to customers,
-            book appointments, close sales and work 24/7 so you never miss another opportunity.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-8 flex flex-wrap items-center gap-3"
-          >
-            <WaitlistButton>Join Waitlist</WaitlistButton>
-            {/* TODO: Replace with actual demo video link */}
-            <a
-              href="#"
-              className="group inline-flex items-center justify-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-8">
+          {/* Left */}
+          <div className="relative z-10 max-w-xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs text-muted-foreground"
             >
-              <Play className="size-4 fill-current" />
-              Watch Demo
-            </a>
-          </motion.div>
+              <span className="relative flex size-2">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-60" />
+                <span className="relative inline-flex size-2 rounded-full bg-accent" />
+              </span>
+              Join the beta — limited spots available
+            </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-5 text-sm text-muted-foreground"
-          >
-            No credit card required.{' '}
-            <span className="text-foreground/80">Launching soon.</span>
-          </motion.p>
-        </div>
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
+              className="font-display text-5xl font-black leading-[1.02] tracking-tight text-balance sm:text-6xl lg:text-7xl"
+            >
+              Your AI Employee <span className="text-gradient-violet">That Never Sleeps.</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-6 text-lg leading-relaxed text-muted-foreground text-pretty"
+            >
+              Orbit AI helps businesses automate customer conversations, qualify leads, answer questions, schedule appointments, and close sales 24/7 from one intelligent dashboard.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-8 flex flex-wrap items-center gap-3"
+            >
+              <WaitlistButton>Get Early Access</WaitlistButton>
+              <button
+                onClick={() => setShowVideo(true)}
+                className="group inline-flex items-center justify-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+              >
+                <Play className="size-4 fill-current" />
+                Watch Demo
+              </button>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="mt-5 text-sm text-muted-foreground"
+            >
+              No credit card required. Start your free trial instantly.
+            </motion.p>
+          </div>
 
         {/* Right — floating robot stage */}
         <div
@@ -150,12 +150,49 @@ export function Hero() {
           ))}
         </div>
 
-        {/* mobile inline waitlist */}
-        <div className="lg:hidden">
-          <InlineWaitlist />
+          {/* mobile inline waitlist */}
+          <div className="lg:hidden">
+            <InlineWaitlist />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setShowVideo(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-4xl mx-4"
+          >
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+              aria-label="Close video"
+            >
+              <X className="size-6" />
+            </button>
+            <div className="relative bg-black rounded-xl overflow-hidden" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src={DEMO_VIDEO_URL}
+                title="Orbit AI Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </>
   )
 }
 

@@ -1,16 +1,14 @@
 import { Logo } from './logo'
-import { GithubIcon, LinkedinIcon, XIcon } from './brand-icons'
+import { XIcon } from './brand-icons'
 
 const links = [
-  { label: 'Privacy', href: '#' },
+  { label: 'Privacy Policy', href: '#' },
   { label: 'Terms', href: '#' },
-  { label: 'Contact', href: 'mailto:orbitaisupport1@gmail.com' },
+  { label: 'Email', href: 'mailto:orbitaisupport1@gmail.com' },
 ]
 
 const socials = [
   { label: 'X (Twitter)', href: 'https://x.com/orbit_Ai0', icon: XIcon },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/orbit-ai-948938423?utm_source=share_via&utm_content=profile&utm_medium=member_android', icon: LinkedinIcon },
-  { label: 'GitHub', href: 'https://github.com/Francisfex', icon: GithubIcon },
 ]
 
 export function Footer() {
@@ -20,7 +18,7 @@ export function Footer() {
         <div className="flex flex-col items-center gap-3 md:items-start">
           <Logo size={32} />
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Orbit.Ai — Hire AI Employees.
+            © {new Date().getFullYear()} Orbit AI. All rights reserved.
           </p>
         </div>
 

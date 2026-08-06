@@ -1,14 +1,12 @@
 import { AuroraBackground } from '@/components/site/aurora-background'
 import { Nav } from '@/components/site/nav'
 import { Hero } from '@/components/site/hero'
-import { SocialProof } from '@/components/site/social-proof'
-import { Problem } from '@/components/site/problem'
-import { Solution } from '@/components/site/solution'
-import { HowItWorks } from '@/components/site/how-it-works'
-import { Marketplace } from '@/components/site/marketplace'
+import { Trust } from '@/components/site/trust'
+import { Features } from '@/components/site/features'
 import { DashboardPreview } from '@/components/site/dashboard-preview'
-import { Pricing } from '@/components/site/pricing'
-import { Faq } from '@/components/site/faq'
+import { DemoSection } from '@/components/site/demo-section'
+import { Comparison } from '@/components/site/comparison'
+import { Testimonials } from '@/components/site/testimonials'
 import { FinalCta } from '@/components/site/final-cta'
 import { Footer } from '@/components/site/footer'
 
@@ -19,14 +17,12 @@ export default function Page() {
       <Nav />
       <main className="relative">
         <Hero />
-        <SocialProof />
-        <Problem />
-        <Solution />
-        <HowItWorks />
-        <Marketplace />
+        <Trust />
+        <Features />
         <DashboardPreview />
-        <Pricing />
-        <Faq />
+        <DemoSection />
+        <Comparison />
+        <Testimonials />
         <FinalCta />
       </main>
       <Footer />

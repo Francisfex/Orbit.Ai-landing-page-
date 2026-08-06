@@ -14,18 +14,16 @@ export function FinalCta() {
 
               <div className="relative">
                 <h2 className="font-display text-3xl font-black leading-tight tracking-tight text-balance sm:text-5xl">
-                  Your next employee isn&apos;t human.
-                  <br />
-                  <span className="text-gradient-violet">It&apos;s Orbit.</span>
+                  Ready to Let AI <span className="text-gradient-violet">Work For You?</span>
                 </h2>
                 <p className="mx-auto mt-5 max-w-lg text-base leading-relaxed text-muted-foreground text-pretty">
-                  Join the waitlist and be first to build your always-on AI team.
+                  Join early access and get exclusive benefits as we launch Orbit AI.
                 </p>
                 <div className="mt-8 flex justify-center">
                   <InlineWaitlist />
                 </div>
                 <p className="mt-4 text-xs text-muted-foreground">
-                  No credit card required. Launching soon.
+                  No credit card required. Start free instantly.
                 </p>
               </div>
             </div>
