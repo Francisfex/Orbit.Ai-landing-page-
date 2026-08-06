@@ -15,7 +15,6 @@ import type { ComponentType, SVGProps } from 'react'
 import { Particles } from './particles'
 import { InlineWaitlist, WaitlistButton } from './waitlist'
 import { InstagramIcon } from './brand-icons'
-import { DemoModal } from './demo-modal'
 
 type FloatCard = {
   icon: ComponentType<SVGProps<SVGSVGElement>>
@@ -104,7 +103,17 @@ export function Hero() {
             className="mt-8 flex flex-wrap items-center gap-3"
           >
             <WaitlistButton>Join Waitlist</WaitlistButton>
-            <DemoModal />
+            <button
+              onClick={() => {
+                document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+              className="group inline-flex items-center justify-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+            >
+              <svg className="size-4 fill-current" viewBox="0 0 24 24">
+                <polygon points="5 3 19 12 5 21" />
+              </svg>
+              Watch Demo
+            </button>
           </motion.div>
 
           <motion.p
