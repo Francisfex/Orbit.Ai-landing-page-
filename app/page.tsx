@@ -1,6 +1,7 @@
 import { AuroraBackground } from '@/components/site/aurora-background'
 import { Nav } from '@/components/site/nav'
 import { Hero } from '@/components/site/hero'
+import { ProductDemo } from '@/components/site/product-demo'
 import { SocialProof } from '@/components/site/social-proof'
 import { Problem } from '@/components/site/problem'
 import { Solution } from '@/components/site/solution'
@@ -19,6 +20,7 @@ export default function Page() {
       <Nav />
       <main className="relative">
         <Hero />
+        <ProductDemo />
         <SocialProof />
         <Problem />
         <Solution />

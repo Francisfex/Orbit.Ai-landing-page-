@@ -8,7 +8,6 @@ import {
   Headphones,
   MessageCircle,
   Package,
-  Play,
   ShoppingBag,
   TrendingUp,
 } from 'lucide-react'
@@ -104,14 +103,17 @@ export function Hero() {
             className="mt-8 flex flex-wrap items-center gap-3"
           >
             <WaitlistButton>Join Waitlist</WaitlistButton>
-            {/* TODO: Replace with actual demo video link */}
-            <a
-              href="#"
+            <button
+              onClick={() => {
+                document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })
+              }}
               className="group inline-flex items-center justify-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
             >
-              <Play className="size-4 fill-current" />
+              <svg className="size-4 fill-current" viewBox="0 0 24 24">
+                <polygon points="5 3 19 12 5 21" />
+              </svg>
               Watch Demo
-            </a>
+            </button>
           </motion.div>
 
           <motion.p

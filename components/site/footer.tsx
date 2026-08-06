@@ -1,5 +1,5 @@
 import { Logo } from './logo'
-import { GithubIcon, LinkedinIcon, XIcon } from './brand-icons'
+import { XIcon } from './brand-icons'
 
 const links = [
   { label: 'Privacy', href: '#' },
@@ -9,8 +9,11 @@ const links = [
 
 const socials = [
   { label: 'X (Twitter)', href: 'https://x.com/orbit_Ai0', icon: XIcon },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/orbit-ai-948938423?utm_source=share_via&utm_content=profile&utm_medium=member_android', icon: LinkedinIcon },
-  { label: 'GitHub', href: 'https://github.com/Francisfex', icon: GithubIcon },
+  { label: 'Email', href: 'mailto:orbitaisupport1@gmail.com', icon: () => (
+    <svg className="size-4" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+    </svg>
+  ) },
 ]
 
 export function Footer() {
